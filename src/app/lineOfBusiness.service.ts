@@ -30,6 +30,7 @@ export class LineOfBusinessService {
       );
   }
 
+
   /** GET line of business by id. Return `undefined` when id not found */
   getLineOfBusinessNo404<Data>(id: number): Observable<LineOfBusiness> {
     const url = `${this.lineOfBusinessUrl}/?id=${id}`;
