@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service';
-import { Quote } from './recentQuotes';
+import { insuranceQuote } from './recentQuotes';
 
 
 @Injectable({ providedIn: 'root' })
@@ -22,11 +22,11 @@ export class QuoteService {
     private messageService: MessageService) { }
 
   /** GET recent quotes from the server */
-  getRecentQuotes(): Observable<Quote[]> {
-    return this.http.get<Quote[]>(this.recentQuotesUrl)
+  getRecentQuotes(): Observable<insuranceQuote[]> {
+    return this.http.get<insuranceQuote[]>(this.recentQuotesUrl)
       .pipe(
-        tap(_ => this.log('fetched recent quotes')),
-        catchError(this.handleError<Quote[]>('getRecentQuotes', []))
+        tap(_ => this.log('fetched all recent quotes')),
+        catchError(this.handleError<insuranceQuote[]>('getRecentQuotes', []))
       );
   }
 

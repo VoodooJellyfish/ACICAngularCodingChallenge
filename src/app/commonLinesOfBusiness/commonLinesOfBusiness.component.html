@@ -1,0 +1,6 @@
+<h3>Common Past Quotes</h3>
+<div class="common-business-container">
+    <a *ngFor="let lineOfBusiness of commonLinesOfBusiness" routerLink="/detail/{{lineOfBusiness.id}}">
+        {{lineOfBusiness.name}}
+    </a>
+</div>
